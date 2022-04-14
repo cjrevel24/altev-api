@@ -255,6 +255,7 @@ const cebuTickets = [
   },
 ];
 
+//VOTING PRESIDENT LISTS
 const presidents = [
   {
     id: 1,
@@ -306,6 +307,7 @@ const presidents = [
   },
 ];
 
+//VOTING VICE PRESIDENT LISTS
 const vicePresidents = [
   {
     id: 1,
@@ -357,6 +359,7 @@ const vicePresidents = [
   },
 ];
 
+//VOTING SENATORS PRESIDENT LISTS
 const senators = [
   {
     id: 1,
@@ -472,6 +475,255 @@ const senators = [
   },
 ];
 
+//VOTING STORAGE SEND USER VOTES
+const mySelectedVotes = [];
+
+//LIBRARY BOOK LISTS
+const libraryBookLists = [
+  {
+    id: 1,
+    book_name: "Mariner Books Life of Pi",
+    book_status: "Available",
+    book_category: "Action and Adventure",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292455-51rxEvLljUL.jpg?crop=1xw:0.972xh;center,top&resize=980:*",
+  },
+  {
+    id: 2,
+    book_name:
+      "Createspace Independent Publishing Platform The Three Musketeers",
+    book_status: "Borrowed",
+    book_category: "Action and Adventure",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292481-41TxXqToCCL.jpg?crop=0.952xw:1xh;center,top&resize=980:*",
+  },
+  {
+    id: 3,
+    book_name:
+      "CreateSpace Independent Publishing Platform The Call of the Wild",
+    book_status: "Available",
+    book_category: "Action and Adventure",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292506-41A0yff934L.jpg?crop=1xw:0.999xh;center,top&resize=980:*",
+  },
+  {
+    id: 4,
+    book_name: "To Kill a Mockingbird",
+    book_status: "Available",
+    book_category: "Classics",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292658-51IXWZzlgSL.jpg?crop=1xw:0.996xh;center,top&resize=980:*",
+  },
+  {
+    id: 5,
+    book_name: "Little Women",
+    book_status: "Borrowed",
+    book_category: "Classics",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292680-51xJASXQJwL.jpg?crop=1.00xw:0.978xh;0,0.0120xh&resize=980:*",
+  },
+  {
+    id: 6,
+    book_name: "Vintage Beloved",
+    book_status: "Available",
+    book_category: "Classics",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292709-41Rdzbiqh7L.jpg?crop=1.00xw:0.974xh;0,0.0160xh&resize=980:*",
+  },
+  {
+    id: 7,
+    book_name: "DC Comics Watchmen",
+    book_status: "Available",
+    book_category: "Graphic Novel",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292885-41ZJD5Dw5KL.jpg?crop=1.00xw:0.962xh;0,0.0200xh&resize=980:*",
+  },
+  {
+    id: 8,
+    book_name: "Image Comics The Walking Dead: Compendium One",
+    book_status: "Borrowed",
+    book_category: "Graphic Novel",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292913-51S12ntkIbL.jpg?crop=1xw:0.975xh;center,top&resize=980:*",
+  },
+  {
+    id: 9,
+    book_name: "HarperOne The Boy, the Mole, the Fox and the Horse",
+    book_status: "Available",
+    book_category: "Graphic Novel",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292943-418D9yYGB3L.jpg?crop=0.900xw:1.00xh;0.0916xw,0&resize=980:*",
+  },
+  {
+    id: 10,
+    book_name: "Little, Brown and Company The Night Fire",
+    book_status: "Available",
+    book_category: "Detective and Mystery",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293115-41zqZwXZ-WL.jpg?crop=1.00xw:0.984xh;0,0.00600xh&resize=980:*",
+  },
+  {
+    id: 11,
+    book_name: "The Adventures of Sherlock Holmes",
+    book_status: "Borrowed",
+    book_category: "Detective and Mystery",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293468-516dZVA7rQL.jpg?crop=0.958xw:1xh;center,top&resize=980:*",
+  },
+  {
+    id: 12,
+    book_name: "And Then There Were None",
+    book_status: "Available",
+    book_category: "Detective and Mystery",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293489-51MlxNgCsyL.jpg?crop=1.00xw:0.932xh;0,0.0440xh&resize=980:*",
+  },
+  {
+    id: 13,
+    book_name: "One World The Water Dancer",
+    book_status: "Available",
+    book_category: "Fantasy",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293716-51ItgiZw5dL.jpg?crop=1xw:0.987xh;center,top&resize=980:*",
+  },
+  {
+    id: 14,
+    book_name: "Circe",
+    book_status: "Borrowed",
+    book_category: "Fantasy",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293746-51dzuwLmm-L.jpg?crop=1.00xw:0.932xh;0,0.0540xh&resize=980:*",
+  },
+  {
+    id: 15,
+    book_name: "Flatiron Books Ninth House",
+    book_status: "Available",
+    book_category: "Fantasy",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293766-41cUxNtr5-L.jpg?crop=1.00xw:0.986xh;0,0.00800xh&resize=980:*",
+  },
+  {
+    id: 16,
+    book_name: "G.P. Putnam's Sons The Help",
+    book_status: "Available",
+    book_category: "Historical Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293965-51D9LgMgL.jpg?crop=1xw:0.999xh;center,top&resize=980:*",
+  },
+  {
+    id: 17,
+    book_name: "One Hundred Years of Solitude",
+    book_status: "Borrowed",
+    book_category: "Historical Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572294012-51Zr6Pd32ML.jpg?crop=1xw:0.996xh;center,top&resize=980:*",
+  },
+  {
+    id: 18,
+    book_name: "Vintage Memoirs of a Geisha",
+    book_status: "Available",
+    book_category: "Historical Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572294103-51O9HqW8ZAL.jpg?crop=1.00xw:0.974xh;0,0.0200xh&resize=980:*",
+  },
+  {
+    id: 19,
+    book_name: "Anchor Carrie",
+    book_status: "Available",
+    book_category: "Horror",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295234-51dRjo8NJeL.jpg?crop=1.00xw:0.896xh;0.00336xw,0.102xh&resize=980:*",
+  },
+  {
+    id: 20,
+    book_name: "Penguin Classics The Haunting of Hill House",
+    book_status: "Borrowed",
+    book_category: "Horror",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295266-51gyXcg1P2L.jpg?crop=1.00xw:0.974xh;0,0.0240xh&resize=980:*",
+  },
+  {
+    id: 21,
+    book_name: "Bird Box",
+    book_status: "Available",
+    book_category: "Horror",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295284-41sRIihnXzL.jpg?crop=1xw:0.996xh;center,top&resize=980:*",
+  },
+  {
+    id: 22,
+    book_name: "G.P. Putnam's Sons Where the Crawdads Sing",
+    book_status: "Available",
+    book_category: "Literary Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295477-51j5p18mJNL.jpg?crop=1xw:0.996xh;center,top&resize=980:*",
+  },
+  {
+    id: 23,
+    book_name: "Olive, Again",
+    book_status: "Borrowed",
+    book_category: "Literary Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295502-512WyIl2uSL.jpg?crop=1xw:0.990xh;center,top&resize=980:*",
+  },
+  {
+    id: 24,
+    book_name: "Harper The Dutch House: A Novel",
+    book_status: "Available",
+    book_category: "Literary Fiction",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572295539-51FiW7t0GuL.jpg?crop=1xw:0.993xh;center,top&resize=980:*",
+  },
+  {
+    id: 25,
+    book_name: "Brazen and the Beast",
+    book_status: "Available",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296390-51fiEAOae4L.jpg?crop=1.00xw:0.950xh;0,0.0240xh&resize=980:*",
+  },
+  {
+    id: 26,
+    book_name: "Berkley Royal Holiday",
+    book_status: "Borrowed",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296414-51QdlkQL.jpg?crop=1xw:1xh;center,top&resize=980:*",
+  },
+  {
+    id: 27,
+    book_name: "The Savior",
+    book_status: "Available",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296440-41RxnbDaefL.jpg?crop=1.00xw:0.920xh;0,0.0800xh&resize=980:*",
+  },
+  {
+    id: 28,
+    book_name: "Nan A. Talese The Testaments",
+    book_status: "Available",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296624-419TWZk7luL.jpg?crop=1xw:0.987xh;center,top&resize=980:*",
+  },
+  {
+    id: 29,
+    book_name: "The Hunger Games Trilogy",
+    book_status: "Borrowed",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296661-41nphb8vbPL.jpg?crop=0.978xw:1xh;center,top&resize=980:*",
+  },
+  {
+    id: 30,
+    book_name: "Houghton Mifflin Harcourt 1984",
+    book_status: "Available",
+    book_category: "Romance",
+    book_image:
+      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572296688-410ZirPKXKL.jpg?crop=1xw:0.999xh;center,top&resize=980:*",
+  },
+];
+
 module.exports = {
   users,
   olxLists,
@@ -479,4 +731,6 @@ module.exports = {
   presidents,
   vicePresidents,
   senators,
+  mySelectedVotes,
+  libraryBookLists,
 };

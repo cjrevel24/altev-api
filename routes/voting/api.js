@@ -1,5 +1,10 @@
 const router = require("express").Router();
-const { presidents, vicePresidents, senators } = require("../../db");
+const {
+  presidents,
+  vicePresidents,
+  senators,
+  mySelectedVotes,
+} = require("../../db");
 const checkAuth = require("../../middleware/checkAuth");
 
 //GET PRESIDENTS LIST
@@ -47,28 +52,32 @@ router.get("/senator-list", checkAuth, (req, res) => {
   return res.json(senators);
 });
 
-router.get("/category/:category", checkAuth, (req, res) => {
-  const { category } = req.params;
+// SEND USER VOTE
+router.post("/myvote", checkAuth, (req, res) => {
+  const { president_name, vice_president_name, senators } = req.body;
 
-  if (!category) {
+  if (!president_name || !vice_president_name || !senators) {
     return res.status(404).json({
       errors: [
         {
-          msg: "Must submit a category payload!",
+          msg: "Please send accurate payload",
         },
       ],
     });
-  }
-
-  const categoryName = olxLists
-    .filter((cat) => {
-      return cat.item_category === category;
-    })
-    .map((items) => {
-      return items;
+  } else {
+    mySelectedVotes.push({
+      president_name: president_name,
+      vice_president_name: vice_president_name,
+      senators: senators,
     });
 
-  return res.json(categoryName);
+    return res.json("submitted successfully!");
+  }
+});
+
+// GET USER VOTE
+router.get("/history", (req, res) => {
+  res.json(mySelectedVotes);
 });
 
 module.exports = router;
