@@ -75,6 +75,16 @@ router.post("/myvote", checkAuth, (req, res) => {
   }
 });
 
+router.get("/summary", checkAuth, (req, res) => {
+  res.json({
+    message: "Success vote is submitted",
+    success_icon:
+      "https://image.similarpng.com/very-thumbnail/2021/06/Green-check-mark-icon-on-transparent-background-PNG.png",
+    description:
+      "The staff is confirming your voted candidates!",
+  });
+});
+
 // GET USER VOTE
 router.get("/history", (req, res) => {
   res.json(mySelectedVotes);

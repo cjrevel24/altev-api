@@ -1,9 +1,8 @@
 const router = require("express").Router();
-const { libraryBookLists } = require("../../db");
-const checkAuth = require("../../middleware/checkAuth");
+const { libraryBookLists, borrowedBooks } = require("../../db");
 
 //GET LIBRARY BOOK LISTS
-router.get("/list", checkAuth, (req, res) => {
+router.get("/list", (req, res) => {
   if (!libraryBookLists) {
     return res.status(404).json({
       errors: [
@@ -18,7 +17,7 @@ router.get("/list", checkAuth, (req, res) => {
 });
 
 //VIEW LIBRARY SPECIFIC BOOK
-router.get("/view-book/:id", checkAuth, (req, res) => {
+router.get("/view-book/:id", (req, res) => {
   const specifiedBook = libraryBookLists.find(
     (bookId) => bookId.id === parseInt(req.params.id)
   );
@@ -48,5 +47,39 @@ router.get("/search-book/:category", (req, res) => {
 
   return res.json(categoryBooks);
 });
+
+//SUBMIT BOOROW BOOK
+router.post("/borrow-book", (req, res) => {
+  const { bookId } = req.body;
+
+  if (bookId === "") {
+    return res.status(404).json("Please send the payload (bookId)!");
+  } else {
+    const findBook = libraryBookLists
+      .filter((book) => {
+        return book.id === parseInt(bookId);
+      })
+      .map((bookReserved) => {
+        return bookReserved;
+      });
+    borrowedBooks.push(findBook);
+    return res.json("book is reserved!");
+  }
+});
+
+//SUMMARY OF BOOKING
+router.get("/summary", (req, res) => {
+  res.json({
+    message: "Success vote is submitted",
+    success_icon:
+      "https://image.similarpng.com/very-thumbnail/2021/06/Green-check-mark-icon-on-transparent-background-PNG.png",
+    description: "The staff is confirming your voted candidates!",
+  });
+});
+
+//GET BORROWED BOOKS
+router.get("/my-borrowed-books", (req,res) => {
+  res.json(borrowedBooks)
+})
 
 module.exports = router;

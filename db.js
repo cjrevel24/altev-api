@@ -724,6 +724,53 @@ const libraryBookLists = [
   },
 ];
 
+//BORROWED BOOKS
+const borrowedBooks = [];
+
+// LIST OF POSTS
+const newsFeeds = [
+  {
+    id: 1,
+    post_title: "A new AI draws delightful and not-so-delightful images",
+    post_description:
+      "OpenAI DALL-E 2 is incredible at turning text into images. It also highlights the problem of AI bias — and the need to change incentives in the industry.",
+    post_date: "Apr 14, 2022, 8:00am EDT",
+    post_user: "Sigal Samuel",
+  },
+  {
+    id: 2,
+    post_title: "The death of the gas station",
+    post_description:
+      "As EVs hit the road, gas stations will have to adapt or risk going out of business.",
+    post_date: "Apr 13, 2022, 1:00pm EDT",
+    post_user: "Rebecca Heilweil",
+  },
+  {
+    id: 3,
+    post_title: "Elon Musk is no free speech messiah",
+    post_description: "According to Musk, free speech costs about $3 billion.",
+    post_date: "Apr 12, 2022, 4:20pm EDT",
+    post_user: "Whizy Kim",
+  },
+  {
+    id: 4,
+    post_title:
+      "The growing, lightly controversial industry teaching kids crypto",
+    post_description:
+      "Today parents must ask the age-old question: When is the right time to teach my 5-year-old about NFTs?",
+    post_date: "Apr 12, 2022, 9:00am EDT",
+    post_user: "Rebecca Jennings",
+  },
+  {
+    id: 5,
+    post_title: "Congrats! You formed a union. Now comes the hard part.",
+    post_description:
+      "The boring, crucial work that happens now that Starbucks and Amazon have unionized.",
+    post_date: "Apr 12, 2022, 7:30am EDT",
+    post_user: "Rani Molla",
+  },
+];
+
 module.exports = {
   users,
   olxLists,
@@ -733,4 +780,6 @@ module.exports = {
   senators,
   mySelectedVotes,
   libraryBookLists,
+  borrowedBooks,
+  newsFeeds,
 };
