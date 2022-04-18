@@ -4,6 +4,7 @@ const JWT = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { users } = require("../db");
 const checkAuth = require("../middleware/checkAuth");
+const ls = require("local-storage");
 
 // SIGNUP
 router.post(
@@ -53,14 +54,23 @@ router.post(
       lastName,
     });
 
-    const token = await JWT.sign(
+    const access_token = await JWT.sign(
       { email },
       "nfb32iur32ibfqfvi3vf932bg932g932",
       { expiresIn: 360000 }
     );
 
+    const refresh_token = await JWT.sign(
+      { email },
+      "nfb32iur32ibfqfvi3vf932bg932g932",
+      {
+        expiresIn: 360000,
+      }
+    );
+
     return res.json({
-      token,
+      access_token,
+      refresh_token,
     });
   }
 );
@@ -98,12 +108,25 @@ router.post("/login", async (req, res) => {
   }
 
   // Send JSON WEB TOKEN
-  const token = await JWT.sign({ email }, "nfb32iur32ibfqfvi3vf932bg932g932", {
-    expiresIn: 360000,
-  });
+  const access_token = await JWT.sign(
+    { email },
+    "nfb32iur32ibfqfvi3vf932bg932g932",
+    {
+      expiresIn: 360000,
+    }
+  );
+
+  const refresh_token = await JWT.sign(
+    { email },
+    "nfb32iur32ibfqfvi3vf932bg932g932",
+    {
+      expiresIn: 360000,
+    }
+  );
 
   return res.json({
-    token,
+    access_token,
+    refresh_token,
   });
 });
 
@@ -139,6 +162,19 @@ router.get("/me", checkAuth, (req, res) => {
     });
 
   return res.json(getUser);
+});
+
+//LOGOUT USER
+router.delete("/logout", checkAuth, async (req, res) => {
+  const { refresh_token } = req.body;
+  try {
+    const removeToken = refresh_token;
+    ls.remove(removeToken);
+    res.send("Logout successfully!");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
 });
 
 module.exports = router;
