@@ -10,7 +10,8 @@ app.use("/cebu", require("./routes/cebu/api"));
 app.use("/vote", require("./routes/voting/api"));
 app.use("/library", require("./routes/library/api"));
 app.use("/newsfeed", require("./routes/newsfeed/api"));
+app.use("/stream", require("./routes/stream/api"));
 
-app.listen(8000, () => {
+app.listen(5000, () => {
   console.log("Listening on port 5000");
 });

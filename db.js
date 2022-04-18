@@ -771,6 +771,151 @@ const newsFeeds = [
   },
 ];
 
+// LIST OF VIDEOS
+const streamingVideos = [
+  {
+    id: 1,
+    video_name: "Diana and Roma",
+    video_description: "Learn the alphabet and how to count",
+    video_link: "https://www.youtube.com/watch?v=4XGLPTtn4xQ",
+    video_image:
+      "https://i.scdn.co/image/ab67616d0000b273b07588889e66e1201fa3afb5",
+    video_genre: "Educational",
+  },
+  {
+    id: 2,
+    video_name:
+      "Learn Colors, ABCs and 123 Songs + More Educational Nursery Rhymes & Kids Songs - CoComelon",
+    video_description:
+      "Learn the alphabet, numbers, and colors with CoComelon! In this educational nursery rhyme compilation",
+    video_link: "https://www.youtube.com/watch?v=7i68cD70dEE",
+    video_image: "https://pbs.twimg.com/media/EkpzJQHXEAMpvtI.jpg",
+    video_genre: "Educational",
+  },
+  {
+    id: 3,
+    video_name: "English Conversation Practice",
+    video_description:
+      "English Conversation Practice - Improve Speaking Skills",
+    video_link: "https://www.youtube.com/watch?v=NNamZZsggM4",
+    video_image:
+      "https://www.xploretefl.com/articles/wp-content/uploads/2018/12/teacher-greenboard.jpg",
+    video_genre: "Educational",
+  },
+  {
+    id: 4,
+    video_name: "San Adreas",
+    video_description: "Tsunami Scene - Pure Action [4K]",
+    video_link: "https://www.youtube.com/watch?v=jvIGFhqbe0c",
+    video_image:
+      "https://merahputih.com/media/43/7f/eb/437feb9d9517aacb7bedb7fa8bf06702.PNG",
+    video_genre: "Action",
+  },
+  {
+    id: 5,
+    video_name: "Hobbs Vs Shaw",
+    video_description: "Elevator Fight Scene - FAST AND FURIOUS",
+    video_link: "https://www.youtube.com/watch?v=8luaY8tEElc",
+    video_image:
+      "https://upload.wikimedia.org/wikipedia/en/0/00/Fast_%26_Furious_Presents_Hobbs_%26_Shaw_-_theatrical_poster.jpg",
+    video_genre: "Action",
+  },
+  {
+    id: 6,
+    video_name: "American Assassin",
+    video_description: "Final Nuclear Scene",
+    video_link: "https://www.youtube.com/watch?v=H-qd3ySLgz4",
+    video_image:
+      "https://www.tvguide.com/a/img/catalog/provider/1/2/1-5438799415.jpg",
+    video_genre: "Action",
+  },
+  {
+    id: 7,
+    video_name: "The Heir",
+    video_description:
+      "Horrific, violent visions plague the heir of a family house as past demons arise after she arrives with her three friends to inspect the property.",
+    video_link: "https://www.youtube.com/watch?v=1EzCm1KEegU",
+    video_image: "https://i.ytimg.com/vi/1EzCm1KEegU/maxresdefault.jpg",
+    video_genre: "Horror",
+  },
+  {
+    id: 8,
+    video_name: "THE CURSE OF HUMPTY DUMPTY",
+    video_description:
+      "Humpty Dumpty had a great fall, and he's back in the form of a doll that belongs to a woman with dementia who starts to recall his dark past.",
+    video_link: "https://www.youtube.com/watch?v=VW4eGOO0jcQ",
+    video_image:
+      "https://i0.wp.com/www.horrorsociety.com/wp-content/uploads/2022/01/818W7lZ3pSL._RI_.jpg?resize=750%2C1000&ssl=1",
+    video_genre: "Horror",
+  },
+  {
+    id: 9,
+    video_name: "Flight 666",
+    video_description:
+      "Passengers and crew on an international flight are attacked by unseen forces that threaten all aboard and on the ground below them.",
+    video_link: "https://www.youtube.com/watch?v=E1-AY2Zh6ok",
+    video_image:
+      "https://m.media-amazon.com/images/M/MV5BZjdjYWEwNmQtYTQwNS00MDljLWEwYWMtZTI3Mjc5ODEyYWMxXkEyXkFqcGdeQXVyNTkzMzg3NDM@._V1_FMjpg_UX1000_.jpg",
+    video_genre: "Horror",
+  },
+  {
+    id: 10,
+    video_name: "THE DEVICE",
+    video_description: "Two sisters discover a strange object of alien origin.",
+    video_link: "https://www.youtube.com/watch?v=HEhjfpypVgQ",
+    video_image:
+      "https://bloody-disgusting.com/wp-content/uploads/2015/01/DEVICE_DVD_HIC-e1420136377672.jpg",
+    video_genre: "Sci-Fi",
+  },
+  {
+    id: 11,
+    video_name: "Monster Island",
+    video_description:
+      "Monster Island - Gigantic monsters threaten to destroy everything in their path as mankind remains defenseless.",
+    video_link: "https://www.youtube.com/watch?v=s9CgGuXoij0",
+    video_image:
+      "http://www.nerdly.co.uk/wp-content/uploads/2019/06/monster-island-dvd-cover.jpg",
+    video_genre: "Sci-Fi",
+  },
+  {
+    id: 12,
+    video_name: "Lockdown",
+    video_description:
+      "|n the shadows of a highly contagious virus, a family seeks shelter in the safety of their own home during a nationwide LOCKDOWN, in which MARTIAL LAW is declared. With nowhere to go and danger approaching, the family is forced to confront the evil from within before it consumes them all.",
+    video_link: "https://www.youtube.com/watch?v=XWfWalDTs8c",
+    video_image:
+      "https://m.media-amazon.com/images/M/MV5BN2EwMjA1YzEtZDUzYy00ZWUxLWI2YjQtMjhmMDQ4OTVmMmI1XkEyXkFqcGdeQXVyNDg2NjAzNDY@._V1_FMjpg_UX1000_.jpg",
+    video_genre: "Sci-Fi",
+  },
+  {
+    id: 13,
+    video_name: "IZLA 2021",
+    video_description: "TAGALOG COMEDY MOVIE HD",
+    video_link: "https://www.youtube.com/watch?v=8GgsRYUgyqQ",
+    video_image:
+      "https://m.media-amazon.com/images/M/MV5BMWY4MTdlYWMtNjA2MC00YWZmLTgyZDUtMDRkNzcwNjE2YWUzXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_FMjpg_UX1000_.jpg",
+    video_genre: "Comedy",
+  },
+  {
+    id: 14,
+    video_name: "Diamond Dog Caper",
+    video_description:
+      "A boy battles a gang of thieves to rescue a dog carrying a fortune in stolen diamonds.",
+    video_link: "https://www.youtube.com/watch?v=MkjMrzT6TvA",
+    video_image: "https://flxt.tmsimg.com/assets/p189926_p_v8_aa.jpg",
+    video_genre: "Comedy",
+  },
+  {
+    id: 15,
+    video_name: "Lenny The Wonderdog",
+    video_description:
+      "A superpowered dog engages a young boy in conversation and adventure.",
+    video_link: "https://www.youtube.com/watch?v=WCr_ImpC1VQ",
+    video_image: "https://i.ytimg.com/vi/WCr_ImpC1VQ/maxresdefault.jpg",
+    video_genre: "Comedy",
+  },
+];
+
 module.exports = {
   users,
   olxLists,
@@ -782,4 +927,5 @@ module.exports = {
   libraryBookLists,
   borrowedBooks,
   newsFeeds,
+  streamingVideos,
 };

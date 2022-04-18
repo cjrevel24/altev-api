@@ -20,7 +20,7 @@ router.get("/news-list", (req, res) => {
 //VIEW SPECIFIC NEWSFEED
 router.get("/view-news/:newsId", (req, res) => {
   const { newsId } = req.params;
-  if (newsId) {
+  if (!newsId) {
     return res.status(404).json({
       errors: [
         {
