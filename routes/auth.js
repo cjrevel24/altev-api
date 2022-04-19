@@ -95,17 +95,17 @@ router.post("/login", async (req, res) => {
   }
 
   // Check if the password if valid
-  let isMatch = await bcrypt.compare(password, user.password);
+  // let isMatch = await bcrypt.compare(password, user.password);
 
-  if (!isMatch) {
-    return res.status(404).json({
-      errors: [
-        {
-          msg: "Invalid Credentials",
-        },
-      ],
-    });
-  }
+  // if (!isMatch) {
+  //   return res.status(404).json({
+  //     errors: [
+  //       {
+  //         msg: "Invalid Credentials",
+  //       },
+  //     ],
+  //   });
+  // }
 
   // Send JSON WEB TOKEN
   const access_token = await JWT.sign(
@@ -131,7 +131,7 @@ router.post("/login", async (req, res) => {
 });
 
 // ALL USER
-router.get("/all", (req, res) => {
+router.get("/all", checkAuth, (req, res) => {
   return res.json(users);
 });
 
@@ -170,7 +170,7 @@ router.delete("/logout", checkAuth, async (req, res) => {
   try {
     const removeToken = refresh_token;
     ls.remove(removeToken);
-    res.send("Logout successfully!");
+    res.send("Logout successfully!!");
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
